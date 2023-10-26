@@ -1,11 +1,14 @@
-import Phaser from 'phaser';
+import Phaser, { Textures } from 'phaser';
 import logoImg from './assets/logo.png';
+import Json from "./assets/playerAnimation.json"
 
 class MyGame extends Phaser.Scene
 {
     constructor ()
     {
         super();
+        
+
     }
 
     preload ()
@@ -15,6 +18,8 @@ class MyGame extends Phaser.Scene
 
         //  This is an example of loading a static image from the public folder:
         this.load.image('background', 'assets/bg.jpg');
+        this.load.atlas("player", "/spriteSheet/player.png" , "/json/playerAnimation.json")
+        console.log(Json);
     }
       
     create ()
